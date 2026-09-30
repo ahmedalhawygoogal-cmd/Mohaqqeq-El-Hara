@@ -1,0 +1,6 @@
+{
+  "name": "محقق الحارة",
+  "description": "محقق الحارة - كل دليل له حكاية. لعبة تحقيق جنائي تفاعلية غامضة في أزقة القاهرة القديمة.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

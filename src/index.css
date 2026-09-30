@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-serif: 'Amiri', Georgia, serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0b0908;
+    color: #ebdcc6;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Egyptian Noir atmospheric utility styles */
+.font-serif-arabic {
+  font-family: var(--font-serif);
+}
+
+.font-sans-arabic {
+  font-family: var(--font-sans);
+}
+
+/* Aged parchment style */
+.bg-parchment {
+  background-color: #171411;
+  background-image: radial-gradient(#221c17 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.border-amber-aged {
+  border-color: rgba(201, 131, 43, 0.25);
+}
+
+.text-amber-glow {
+  color: #e5a744;
+  text-shadow: 0 0 12px rgba(229, 167, 68, 0.35);
+}
+
+/* Custom vintage scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #110f0d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2e261f;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c9832b;
+}
