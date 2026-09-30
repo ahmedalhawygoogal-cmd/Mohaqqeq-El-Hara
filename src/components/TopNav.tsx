@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { ScreenMode, GameSaveState } from '../game/gameState';
 import { soundManager } from '../game/soundSystem';
+import { PWAInstallButton } from './pwa/PWAInstallButton';
 
 interface TopNavProps {
   gameState: GameSaveState;
@@ -177,8 +178,11 @@ export const TopNav: React.FC<TopNavProps> = ({ gameState, onNavigate, onResetGa
             </nav>
           )}
 
-          {/* Audio Controls & Reset */}
+          {/* Action Tools, PWA & Audio */}
           <div className="flex items-center gap-2">
+            {/* In-App PWA Install Action */}
+            <PWAInstallButton />
+
             {/* Audio Volume Controls Popover */}
             <div className="relative flex items-center">
               <button

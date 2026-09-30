@@ -23,6 +23,7 @@ import { ForensicLabModal } from './components/puzzles/ForensicLabModal';
 import { CassettePuzzleModal } from './components/puzzles/CassettePuzzleModal';
 import { AccusationModal } from './components/AccusationModal';
 import { ResultView } from './components/ResultView';
+import { OfflineIndicator } from './components/pwa/OfflineIndicator';
 
 export default function App() {
   // Load saved state from LocalStorage or initialize
@@ -251,6 +252,9 @@ export default function App() {
         onNavigate={handleNavigate}
         onResetGame={handleResetGame}
       />
+
+      {/* Network Offline Alert Badge */}
+      <OfflineIndicator />
 
       {/* Main View Area */}
       <main className="flex-1 pb-10">
