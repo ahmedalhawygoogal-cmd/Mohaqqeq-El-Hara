@@ -6,6 +6,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig(() => {
   return {
+    base: '/Mohaqqeq-El-Hara/', // <--- تعديل 1: ضفنا السطر ده هنا
     plugins: [
       react(),
       tailwindcss(),
@@ -21,7 +22,7 @@ export default defineConfig(() => {
           'pwa-maskable-512x512.png',
         ],
         manifest: {
-          id: '/',
+          id: '/Mohaqqeq-El-Hara/', // <--- تعديل 2
           name: 'محقق الحارة - لغز أزقة المعز',
           short_name: 'محقق الحارة',
           description: 'محقق الحارة - كل دليل له حكاية. لعبة تحقيق جنائي تفاعلية غامضة في أزقة القاهرة القديمة.',
@@ -29,26 +30,26 @@ export default defineConfig(() => {
           background_color: '#0e0c0b',
           display: 'standalone',
           orientation: 'any',
-          start_url: '/',
-          scope: '/',
+          start_url: '/Mohaqqeq-El-Hara/', // <--- تعديل 3
+          scope: '/Mohaqqeq-El-Hara/', // <--- تعديل 4
           lang: 'ar',
           dir: 'rtl',
           categories: ['games', 'entertainment'],
           icons: [
             {
-              src: '/pwa-192x192.png',
+              src: '/Mohaqqeq-El-Hara/pwa-192x192.png', // <--- تعديل 5
               sizes: '192x192',
               type: 'image/png',
               purpose: 'any',
             },
             {
-              src: '/pwa-512x512.png',
+              src: '/Mohaqqeq-El-Hara/pwa-512x512.png', // <--- تعديل 6
               sizes: '512x512',
               type: 'image/png',
               purpose: 'any',
             },
             {
-              src: '/pwa-maskable-512x512.png',
+              src: '/Mohaqqeq-El-Hara/pwa-maskable-512x512.png', // <--- تعديل 7
               sizes: '512x512',
               type: 'image/png',
               purpose: 'maskable',
@@ -65,7 +66,7 @@ export default defineConfig(() => {
                 cacheName: 'google-fonts-cache',
                 expiration: {
                   maxEntries: 10,
-                  maxAgeSeconds: 60 * 60 * 24 * 365, // 1 year
+                  maxAgeSeconds: 60 * 60 * 24 * 365,
                 },
                 cacheableResponse: {
                   statuses: [0, 200],
@@ -79,7 +80,7 @@ export default defineConfig(() => {
                 cacheName: 'gstatic-fonts-cache',
                 expiration: {
                   maxEntries: 20,
-                  maxAgeSeconds: 60 * 60 * 24 * 365, // 1 year
+                  maxAgeSeconds: 60 * 60 * 24 * 365,
                 },
                 cacheableResponse: {
                   statuses: [0, 200],
@@ -89,7 +90,7 @@ export default defineConfig(() => {
           ],
         },
         devOptions: {
-          enabled: true, // Enables service worker in development / AI Studio preview
+          enabled: true,
           type: 'module',
         },
       }),
@@ -100,10 +101,7 @@ export default defineConfig(() => {
       },
     },
     server: {
-      // HMR is disabled in AI Studio via DISABLE_HMR env var.
-      // Do not modify—file watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',
-      // Disable file watching when DISABLE_HMR is true to save CPU during agent edits.
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },
   };
